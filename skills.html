@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon-32x32.png" type="image/x-icon">
+
+    <!-- Linking  Icon cdn css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Linking google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!-- General CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- General Script -->
+    <script src="assets/js/script.js" defer></script>
+</head>
+<body>
+
+    <!-- Preloader -->
+    <section class="loader_sec">
+        <div class="loader"></div>
+    </section>
+
+    <!-- Wave Animation -->
+    <div>
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(0,0,0,0.7)" />
+                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(0,0,0,0.5)" />
+                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(0,0,0,0.3)" />
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="#000" />
+            </g>
+        </svg>
+    </div>
+    
+    <!-- Header to be shown only on small screen -->
+    <header>
+        <div class="logo">
+            <img src="assets/images/light_logo.png" alt="">
+        </div>
+        <span><i class="fa-solid fa-bars show_menu"></i></span>
+    </header>
+    
+    <!-- Nav -->
+    <nav>
+        <span><i class="fa-solid fa-xmark"></i></span>
+        <ul>
+            <li class="line"></li>
+            <li><a href="index.html">About</a></li>
+            <li><a href="project.html">Projects</a></li>
+            <li><a href="skills.html" class="active">Skills</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li class="line"></li>
+        </ul>
+    </nav>
+
+    <!-- Skill section -->
+    <section>
+        <h1>I works with both front-end and back-end technologies </h1>
+        <p>Below are few of the tools i have used over the years for personal and professional projects</p>
+        <button class="btn"><a href="professional_cv.html" target="_blank">view resume</a></button>
+    </section>
+
+    <!-- Skill article (my skills) -->
+    <article class="skills_article">
+        <div class="icon_div">
+            <i class="fa-brands fa-html5"></i>
+            <h1>html</h1>
+        </div>
+        <div class="icon_div">
+            <i class="fa-brands fa-css3-alt"></i>
+            <h1>css</h1>
+        </div>
+        <div class="icon_div">
+            <i class="fa-brands fa-bootstrap"></i>
+            <h1>bootstrap</h1>
+        </div>
+        <div class="icon_div">
+            <i class="fa-brands fa-js"></i>
+            <h1>javascript</h1>
+        </div>
+        <div class="icon_div">
+            <i class="fa-brands fa-php"></i>
+            <h1>php</h1>
+        </div>
+        <div class="icon_div">
+            <i class="fa-brands fa-laravel"></i>
+            <h1>laravel</h1>
+        </div>
+        <div class="icon_div">
+            <i class="fa-brands fa-git-alt"></i>
+            <h1>git</h1>
+        </div>
+        <div class="icon_div">
+            <i class="fa-brands fa-github"></i>
+            <h1>github</h1>
+        </div>
+        <div class="icon_div">
+            <i class="fa-brands fa-node-js"></i>
+            <h1>nodejs</h1>
+        </div>
+        <div class="icon_div">
+            <i class="fa-brands fa-react"></i>
+            <h1>react</h1>
+        </div>
+        <div class="icon_div">
+            <i class="fa-brands fa-python"></i>
+            <h1>python</h1>
+        </div>
+        <div class="icon_div">
+            <i class="fa-solid fa-database"></i>
+            <h1>mysql</h1>
+        </div>
+        <div class="icon_div">
+            <i class="fa-solid fa-database"></i>
+            <h1>postgresql</h1>
+        </div>
+        <div class="icon_div">
+            <i class="fa-solid fa-database"></i>
+            <h1>mongodb</h1>
+        </div>
+        <!-- <div class="icon_div">
+            <i class="fa-solid fa-pen-to-square"></i>
+            <h1>wordpress</h1>
+        </div> -->
+    </article>
+
+    <!-- Footer -->
+    <footer>
+        <div class="mode_change">
+            <i class="fa-solid fa-moon" mode="dark"></i>
+            <i class="fa-solid fa-sun" mode="light" style="display: none;"></i>
+        </div>
+
+        <div class="socials">
+            <div class="github">
+                <a href="https://github/dikachu" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+            </div>
+            <div class="linkedin">
+                <a href="https://www.linkedin.com/in/kingsley-ugwuosi" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <div class="facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+            </div>
+            <div class="whatsapp">
+                <a href="httpss://wa.link/v65fzk" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            <div class="upwork">
+                <a href="https://www.upwork.com/freelancers/-0139cb4ddbc94bca68" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-upwork"></i></a>
+            </div>
+        </div>
+
+        <div class="share">
+            <i class="fa-solid fa-share-nodes"></i>
+        </div>
+
+        <div class="copyRight">
+            kingsley portfolio copyright @ <span></span>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ugwuosi Kingsley Onyedikachukwu - Full-Stack Developer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: white;
+            font-size: 11pt;
+        }
+        
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20mm;
+            background: white;
+            min-height: 297mm;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 20px;
+        }
+        
+        .name {
+            font-size: 24pt;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+        
+        .title {
+            font-size: 14pt;
+            color: #34495e;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 10pt;
+        }
+        
+        .contact-item {
+            color: #555;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+        }
+        
+        .section-title {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #2c3e50;
+            border-bottom: 1px solid #bdc3c7;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .summary {
+            text-align: justify;
+            line-height: 1.7;
+            color: #444;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .skill-category {
+            margin-bottom: 15px;
+        }
+        
+        .skill-category h4 {
+            color: #2c3e50;
+            font-size: 11pt;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .skill-list {
+            color: #555;
+            line-height: 1.5;
+        }
+        
+        .experience-item, .project-item {
+            margin-bottom: 20px;
+        }
+        
+        .job-header, .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+        
+        .job-title, .project-title {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 12pt;
+        }
+        
+        .company, .project-tech {
+            color: #555;
+            font-style: italic;
+        }
+        
+        .date {
+            color: #777;
+            font-size: 10pt;
+            white-space: nowrap;
+        }
+        
+        .achievements {
+            margin-top: 8px;
+        }
+        
+        .achievements li {
+            margin-bottom: 5px;
+            color: #444;
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        
+        .education-item {
+            margin-bottom: 15px;
+        }
+        
+        .education-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .degree {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .institution {
+            color: #555;
+            font-style: italic;
+        }
+        
+        .certifications {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .professional-summary {
+            text-align: justify;
+            font-size: 14px;
+            line-height: 1.7;
+            color: #444;
+        }
+        
+        .additional-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .info-item {
+            margin-bottom: 10px;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .info-value {
+            color: #555;
+        }
+
+        .sr-only{
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .download-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .download-btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+        
+        .download-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        
+        @media print {
+            body {
+                padding: 20px;
+                font-size: 12px;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            
+            .name {
+                font-size: 24px;
+            }
+            
+            .section-title {
+                font-size: 16px;
+            }
+            
+            .download-btn {
+                display: none !important;
+            }
+            
+            /* .container {
+                margin: 0;
+                padding: 15mm;
+                box-shadow: none;
+            } */
+            
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 10mm;
+            }
+            .name {
+                font-size: 18pt;
+            }
+            .title {
+                font-size: 11pt;
+            }
+            .section-title {
+                font-size: 11pt;
+            }
+            .job-title, .project-title {
+                font-size: 10pt;
+            }
+            .degree, .institution, .info-label, .info-value {
+                font-size: 9pt;
+            }
+            .summary, .skills-grid, .achievements li, .certifications, .professional-summary {
+                font-size: 9pt;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            .skill-category h4 {
+                font-size: 9pt;
+            }
+            .skill-list {
+                font-size: 9pt;
+            }
+            .achievements li {
+                font-size: 9pt;
+            }
+            .certifications {
+                font-size: 9pt;
+            }
+            .additional-info {
+                grid-template-columns: 1fr;
+            }
+            .info-item {
+                margin-bottom: 6px;
+            }
+            .info-label {
+                font-size: 9pt;
+            }
+            .info-value {
+                font-size: 9pt;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <button class="download-btn" onclick="downloadPDF()">📄 Download PDF</button>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="name">UGWUOSI KINGSLEY ONYEDIKACHUKWU</h1>
+            <p class="title">Full Stack Web Developer & Software Engineer</p>
+            <div class="contact-info">
+                <span class="contact-item">📧 kingslwyugwuosi37@gmail.com</span>
+                <span class="contact-item">📱 +234 913 046 3310</span>
+                <span class="contact-item">📍 Enugu, Nigeria</span>
+                <span class="contact-item">🌐 Open to Relocation</span>
+            </div>
+        </header>
+
+        <!-- Professional Summary -->
+        <section class="section">
+            <h2 class="section-title">Professional Summary</h2>
+            <p class="summary">
+                Experienced Full Stack Web Developer with 4+ years of expertise in building robust, scalable web applications using modern technologies such as HTML5, CSS3, JavaScript, PHP, and the Laravel framework. Built so many secure authentication systems, authorization protocols, and role-based access control, with a proven track record as a Technical Instructor at Digital Dreams ICT Academy—successfully training and graduating developers with high proficiency rates. Adept at performance optimization, security implementation, and user experience design, seeking opportunities to contribute to innovative projects while leveraging strong problem-solving skills and a commitment to clean, scalable code architecture.
+            </p>
+        </section>
+
+        <!-- Technical Skills -->
+        <section class="section">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div>
+                    <div class="skill-category">
+                        <h4>Frontend Technologies</h4>
+                        <p class="skill-list">HTML5, CSS3, JavaScript (ES6+), Bootstrap, Responsive Design, DOM Manipulation, AJAX</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Backend Technologies</h4>
+                        <p class="skill-list">PHP, Laravel Framework, Node.js, RESTful APIs, MVC Architecture</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Database Management</h4>
+                        <p class="skill-list">MySQL, PostgreSQL, Database Design, Query Optimization, Migration</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="skill-category">
+                        <h4>Development Tools</h4>
+                        <p class="skill-list">Git, Version Control, Laravel Testing, Code Debugging, Performance Optimization</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Security & Authentication</h4>
+                        <p class="skill-list">Two-Factor Authentication, OTP Verification, Role-Based Access Control, Secure Login Systems</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Additional Technologies</h4>
+                        <p class="skill-list">Python (Django), E-commerce Development, Payment Integration, SMS & Email APIs</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience -->
+        <section class="section">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <h3 class="job-title">Web Development Tutor</h3>
+                        <p class="company">Digital Dreams ICT Academy, Enugu</p>
+                    </div>
+                    <span class="date">March 2024 - Present</span>
+                </div>
+                <ul class="achievements">
+                    <li>Successfully trained and graduated multiple students in full-stack web development technologies including HTML, CSS, JavaScript, PHP, and Laravel</li>
+                    <li>Developed comprehensive curriculum covering modern web development practices and industry standards</li>
+                    <li>Utilized advanced teaching methodologies with 4K display technology for enhanced code demonstration and practical learning</li>
+                    <li>Mentored students in building real-world projects including e-commerce platforms and authentication systems</li>
+                    <li>Maintained 100% student satisfaction rate through hands-on practical training approach</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Key Projects -->
+        <section class="section">
+            <h2 class="section-title">Key Projects</h2>
+            
+            <div class="project-item">
+                <div class="project-header">
+                    <div>
+                        <h3 class="project-title">Advanced Login, Authentication and Authorization System</h3>
+                        <p class="project-tech">Laravel, PHP, JavaScript, HTML, CSS, MySQL</p>
+                    </div>
+                </div>
+                <ul class="achievements">
+                    <li>Developed comprehensive authentication system with multiple verification methods: email link verification, email OTP, SMS verification, and voice verification</li>
+                    <li>Implemented two-factor authentication (2FA) compatible with popular authenticator apps</li>
+                    <li>Built role-based access control system supporting User, Moderator, Admin, Editor, and Super Admin roles</li>
+                    <li>Achieved 99.9% security compliance with industry standards for user data protection</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <div>
+                        <h3 class="project-title">E-commerce Platform</h3>
+                        <p class="project-tech">PHP, JavaScript, HTML, CSS, MySQL, Payment APIs</p>
+                    </div>
+                </div>
+                <ul class="achievements">
+                    <li>Built full-featured e-commerce platform with shopping cart, secure checkout, and inventory management</li>
+                    <li>Integrated multiple payment gateways for seamless transaction processing</li>
+                    <li>Developed real-time product shipment tracking system for enhanced customer experience</li>
+                    <li>Implemented advanced security measures for payment processing and user data protection</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <div>
+                        <h3 class="project-title">Investment Management Platform</h3>
+                        <p class="project-tech">PHP, JavaScript, HTML, CSS, MySQL</p>
+                    </div>
+                </div>
+                <ul class="achievements">
+                    <li>Developed secure investment platform with advanced dashboard controls and analytics</li>
+                    <li>Implemented robust user role management and authorization systems</li>
+                    <li>Created intuitive admin panel for comprehensive platform management</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="education-item">
+                <div class="education-details">
+                    <div>
+                        <div class="degree">Post-Secondary Education Completed</div>
+                        <div class="institution">Currently pursuing Higher Institution studies</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications -->
+        <section class="section">
+            <h2 class="section-title">Certifications</h2>
+            <div class="certifications">
+                <p>• Web Development Certification - Digital Dreams ICT Academy</p>
+                <p>• Online Course Certifications - Udemy Platform</p>
+                <p>• Google Certified - Various Web Technologies</p>
+            </div>
+        </section>
+
+        <!-- Career Objectives -->
+        <div class="section">
+            <div class="section-title">Career Objectives</div>
+            <div class="professional-summary">
+                Seeking challenging opportunities in web development, software engineering, or technical education roles. Passionate about collaborating with forward-thinking development teams to create innovative web solutions and contribute to meaningful technological advancement.
+            </div>
+        </div>
+
+        <!-- Additional Information -->
+        <section class="section">
+            <h2 class="section-title">Additional Information</h2>
+            <div class="additional-info">
+                <div>
+                    <div class="info-item">
+                        <span class="info-label">Languages:</span>
+                        <span class="info-value">English (Fluent)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Work Preference:</span>
+                        <span class="info-value">Open to Remote, On-site, and Hybrid roles</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="info-item">
+                        <span class="info-label">Availability:</span>
+                        <span class="info-value">Immediate</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Relocation:</span>
+                        <span class="info-value">Open to International Opportunities</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+
+
+    <h1 class="sr-only">Ugwuosi Kingsley Onyedikachukwu - Full Stack Web Developer & Software Engineer</h1>
+    <p class="sr-only">Professional CV</p>
+    <script>
+        function downloadPDF() {
+            // Configure PDF options
+            const opt = {
+                margin: [0.5, 0.5, 0.5, 0.5],
+                filename: 'Ugwuosi_Kingsley_CV.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { 
+                    scale: 2,
+                    useCORS: true,
+                    letterRendering: true
+                },
+                jsPDF: { 
+                    unit: 'in', 
+                    format: 'a4', 
+                    orientation: 'portrait' 
+                }
+            };
+
+            // Get the entire body content
+            const element = document.body;
+            
+            // Generate PDF
+            html2pdf().set(opt).from(element).save();
+        }
+
+        // Optional: Add keyboard shortcut for download (Ctrl+P or Cmd+P)
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+                e.preventDefault();
+                downloadPDF();
+            }
+        });
+    </script>
+</body>
+</html>
